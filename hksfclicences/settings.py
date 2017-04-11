@@ -83,3 +83,6 @@ NEWSPIDER_MODULE = 'hksfclicences.spiders'
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+FEED_URI = 's3://hkdata/hksfclicences/%(name)s/%(time)s.jl'
+FEED_FORMAT = 'jsonlines'
