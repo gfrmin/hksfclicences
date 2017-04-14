@@ -49,7 +49,7 @@ class HksfclicencesSpider(scrapy.Spider):
             )
             return
         item = StaffJsonItem()
-        item['name'] = response.css(":nth-child(3) p::text").extract()[3][2:]
+        item['name'] = response.css(":nth-child(3) p::text").extract()[2][2:]
         item['ceref'] = response.meta['ceref']
         js = response.css("script::text")[-2].extract()
         item['jsoninfo'] = json.loads(re.search(r"var licRecordData = (.*?}]}]);", js).group(1))
@@ -57,7 +57,7 @@ class HksfclicencesSpider(scrapy.Spider):
 
     def parse_eo(self, response):
         item = StaffJsonItem()
-        item['name'] = response.css(":nth-child(3) p::text").extract()[3][2:]
+        item['name'] = response.css(":nth-child(3) p::text").extract()[2][2:]
         item['ceref'] = response.meta['ceref']
         js = response.css("script::text")[-2].extract()
         item['jsoninfo'] = json.loads(re.search(r"var eoDetailData = (.*?}]);", js).group(1))
