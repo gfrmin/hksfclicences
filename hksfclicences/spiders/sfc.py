@@ -17,7 +17,7 @@ class HksfclicencesSpider(scrapy.Spider):
                 yield scrapy.FormRequest(
                     "http://www.sfc.hk/publicregWeb/searchByRaJson",
                     formdata={
-                        'licstatus': 'active',
+                        'licstatus': 'all',
                         'ratype': str(licencenumber),
                         'roleType': 'individual',
                         'nameStartLetter': letter,
